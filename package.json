@@ -1,0 +1,10 @@
+{
+  "name": "wikimobilizer",
+  "description": "Always use the mobile version of wikipedia",
+  "url": "https://github.com/hnrysmth/wikimobilizer",
+  "author": "Henry Smith <henry@henrysmith.org>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hnrysmth/wikimobilizer.git"
+  }
+}

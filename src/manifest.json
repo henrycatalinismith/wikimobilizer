@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "wikimobilizer",
+  "version": "0.0.0",
+  "description": "Always use the mobile version of Wikipedia",
+  "browser_action": {
+    "default_icon": {
+      "19": "icons/19.png",
+      "38": "icons/38.png"
+    },
+    "default_title": "wikimobilizer"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": [
+        "wikimobilizer.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "icons":
+  {
+    "128": "icons/128.png"
+  }
+}
+

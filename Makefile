@@ -2,4 +2,10 @@ build:
 	rm -rf src.zip
 	zip -r src.zip src
 
-.PHONY: build
+test: node_modules
+	@./node_modules/.bin/mocha -R nyan
+
+node_modules:
+	npm install
+
+.PHONY: build test

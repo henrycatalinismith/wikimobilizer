@@ -6,5 +6,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/hnrysmth/wikimobilizer.git"
+  },
+  "devDependencies": {
+    "mocha": "1.14.0",
+    "should": "2.0.2"
   }
 }

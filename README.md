@@ -36,6 +36,6 @@ $ make test
 License
 -------
 
-XKCD Substitutions is released under the [MIT License](http://www.opensource.org/licenses/MIT).
+Wikimobilizer is released under the [MIT License](http://www.opensource.org/licenses/MIT).
 
 [web store]: https://chrome.google.com/webstore/detail/plenepnjppahandjpemobllfnkkalplb

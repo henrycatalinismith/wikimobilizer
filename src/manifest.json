@@ -10,15 +10,15 @@
     },
     "default_title": "wikimobilizer"
   },
-  "content_scripts": [
-    {
-      "matches": ["*://*/*"],
-      "js": [
-        "wikimobilizer.js"
-      ],
-      "run_at": "document_end"
-    }
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "*://*.wikipedia.org/"
   ],
+  "background": {
+    "scripts": ["wikimobilizer.js"],
+    "persistent": true
+  },
   "icons":
   {
     "128": "icons/128.png"

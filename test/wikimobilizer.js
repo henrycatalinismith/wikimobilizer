@@ -1,21 +1,25 @@
 var should = require('should');
-var wikimobilizer = require('../src/wikimobilizer.js');
+var Wikimobilizer = require('../src/wikimobilizer.js');
 
-describe('wikimobilizer', function() {
+describe('Wikimobilizer', function() {
 
-  it('leaves non-Wikipedia URLs alone', function () {
-    wikimobilizer('https://poop.bike')
-      .should.equal('https://poop.bike');
-  });
+  describe('#transformUrl', function() {
 
-  it('rewrites Liverpool to the mobile Wikipedia site', function () {
-    wikimobilizer('http://en.wikipedia.org/wiki/Liverpool').
-      should.equal('http://en.m.wikipedia.org/wiki/Liverpool');
-  });
+    it('leaves non-Wikipedia URLs alone', function () {
+      Wikimobilizer.transformUrl('https://poop.bike')
+        .should.equal('https://poop.bike');
+    });
 
-  it('rewrites a more complex URL to the mobile Wikipedia site', function () {
-    wikimobilizer('http://en.wikipedia.org/wiki/Category:United_States_military_reconnaissance_aircraft_1950–1959').
-      should.equal('http://en.m.wikipedia.org/wiki/Category:United_States_military_reconnaissance_aircraft_1950–1959');
+    it('rewrites Liverpool to the mobile Wikipedia site', function () {
+      Wikimobilizer.transformUrl('http://en.wikipedia.org/wiki/Liverpool').
+        should.equal('http://en.m.wikipedia.org/wiki/Liverpool');
+    });
+
+    it('rewrites a more complex URL to the mobile Wikipedia site', function () {
+      Wikimobilizer.transformUrl('http://en.wikipedia.org/wiki/Category:United_States_military_reconnaissance_aircraft_1950–1959').
+        should.equal('http://en.m.wikipedia.org/wiki/Category:United_States_military_reconnaissance_aircraft_1950–1959');
+    });
+
   });
 
 });

@@ -1,4 +1,4 @@
-Good Game Proof Enhancer
-========================
+wikimobilizer
+=============
 
-Highlights the **PROOF** in any website you visit.
+Always use the mobile version of Wikipedia.

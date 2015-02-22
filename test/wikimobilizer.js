@@ -8,9 +8,14 @@ describe('wikimobilizer', function() {
       .should.equal('https://poop.bike');
   });
 
-  it('rewrites to the mobile Wikipedia site', function () {
+  it('rewrites Liverpool to the mobile Wikipedia site', function () {
     wikimobilizer('http://en.wikipedia.org/wiki/Liverpool').
       should.equal('http://en.m.wikipedia.org/wiki/Liverpool');
+  });
+
+  it('rewrites a more complex URL to the mobile Wikipedia site', function () {
+    wikimobilizer('http://en.wikipedia.org/wiki/Category:United_States_military_reconnaissance_aircraft_1950–1959').
+      should.equal('http://en.m.wikipedia.org/wiki/Category:United_States_military_reconnaissance_aircraft_1950–1959');
   });
 
 });

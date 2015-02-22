@@ -1,15 +1,15 @@
 var listener = function(details) {
-  console.log(details.url);
   return {
-    redirectUrl: 'http://poop.bike'
+    redirectUrl: redirect(details.url)
   };
 };
 
-var regex = /http:\/\/en.wikipedia.org\/wiki\/Liverpool/;
+var regex = /http:\/\/en.wikipedia.org\/wiki\/([^\/]+)/;
 
 var redirect = function(url) {
-  if (url.match(regex)) {
-    url = 'http://en.m.wikipedia.org/wiki/Liverpool';
+  var match = url.match(regex);
+  if (match) {
+    url = 'http://en.m.wikipedia.org/wiki/' + match[1];
   }
   return url;
 }

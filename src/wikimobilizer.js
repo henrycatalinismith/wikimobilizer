@@ -5,6 +5,19 @@ var listener = function(details) {
   };
 };
 
+var regex = /http:\/\/en.wikipedia.org\/wiki\/Liverpool/;
+
+var redirect = function(url) {
+  if (url.match(regex)) {
+    url = 'http://en.m.wikipedia.org/wiki/Liverpool';
+  }
+  return url;
+}
+
 var filter = { urls : ["<all_urls>"] };
 
-chrome.webRequest.onBeforeRequest.addListener(listener, filter, ["blocking"]);
+if (typeof chrome !== 'undefined' && typeof chrome.webRequest !== 'undefined') {
+  chrome.webRequest.onBeforeRequest.addListener(listener, filter, ["blocking"]);
+} else if (typeof module !== 'undefined') {
+  module.exports = redirect;
+}

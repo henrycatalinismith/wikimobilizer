@@ -12,10 +12,10 @@ var Wikimobilizer = {
   },
 
   transformUrl: function(url) {
-    var regex = /http:\/\/en.wikipedia.org\/wiki\/([^\/]+)/;
+    var regex = /https?:\/\/en.wikipedia.org\/wiki\/([^\/]+)/;
     var match = url.match(regex);
     if (match) {
-      url = 'http://en.m.wikipedia.org/wiki/' + match[1];
+      url = 'https://en.m.wikipedia.org/wiki/' + match[1];
     }
     return url;
   }

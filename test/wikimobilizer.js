@@ -11,13 +11,23 @@ describe('Wikimobilizer', function() {
     });
 
     it('rewrites Liverpool to the mobile Wikipedia site', function () {
-      Wikimobilizer.transformUrl('http://en.wikipedia.org/wiki/Liverpool').
-        should.equal('http://en.m.wikipedia.org/wiki/Liverpool');
+      Wikimobilizer.transformUrl('https://en.wikipedia.org/wiki/Liverpool').
+        should.equal('https://en.m.wikipedia.org/wiki/Liverpool');
     });
 
     it('rewrites a more complex URL to the mobile Wikipedia site', function () {
-      Wikimobilizer.transformUrl('http://en.wikipedia.org/wiki/Category:United_States_military_reconnaissance_aircraft_1950–1959').
-        should.equal('http://en.m.wikipedia.org/wiki/Category:United_States_military_reconnaissance_aircraft_1950–1959');
+      Wikimobilizer.transformUrl('https://en.wikipedia.org/wiki/Category:United_States_military_reconnaissance_aircraft_1950–1959').
+        should.equal('https://en.m.wikipedia.org/wiki/Category:United_States_military_reconnaissance_aircraft_1950–1959');
+    });
+
+    it('rewrites the German Wikipedia article about Ireland to the mobile Wikipedia site', function () {
+      Wikimobilizer.transformUrl('https://de.wikipedia.org/wiki/Irland').
+        should.equal('https://de.m.wikipedia.org/wiki/Irland');
+    });
+
+    it('rewrites non-secure URLs to their secure mobile variant', function () {
+      Wikimobilizer.transformUrl('http://de.wikipedia.org/wiki/Irland').
+        should.equal('https://de.m.wikipedia.org/wiki/Irland');
     });
 
   });

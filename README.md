@@ -19,7 +19,8 @@ personally wanted to use an extension for it, and there wasn't one.
 Installation
 ------------
 
-[Available on the Chrome Web Store][web store]
+* [Firefox][firefox]
+* [Chrome][chrome]
 
 Contributing
 ------------
@@ -38,4 +39,5 @@ License
 
 Wikimobilizer is released under the [MIT License](http://www.opensource.org/licenses/MIT).
 
-[web store]: https://chrome.google.com/webstore/detail/plenepnjppahandjpemobllfnkkalplb
+[firefox]: https://addons.mozilla.org/en-US/firefox/addon/wikimobilizer/
+[chrome]: https://chrome.google.com/webstore/detail/plenepnjppahandjpemobllfnkkalplb

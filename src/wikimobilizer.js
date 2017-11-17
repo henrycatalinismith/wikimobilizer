@@ -1,14 +1,18 @@
 var Wikimobilizer = {
-
   listen: function(event) {
     var filter = { urls : ["<all_urls>"] };
     event.addListener(this.redirect.bind(this), filter, ["blocking"]);
   },
 
   redirect: function(details) {
-    return {
-      redirectUrl: this.transformUrl(details.url)
-    };
+    var redirectUrl = this.transformUrl(details.url);
+    if (redirectUrl !== details.url) {
+      return {
+        redirectUrl: redirectUrl
+      };
+    } else {
+      return {};
+    }
   },
 
   transformUrl: function(url) {
@@ -22,7 +26,9 @@ var Wikimobilizer = {
 
 };
 
-if (typeof chrome !== 'undefined' && typeof chrome.webRequest !== 'undefined') {
+if (typeof browser !== "undefined" && typeof browser.webRequest !== 'undefined') {
+  Wikimobilizer.listen(browser.webRequest.onBeforeRequest);
+} else if (typeof chrome !== "undefined" && typeof chrome.webRequest !== 'undefined') {
   Wikimobilizer.listen(chrome.webRequest.onBeforeRequest);
 } else if (typeof module !== 'undefined') {
   module.exports = Wikimobilizer;;

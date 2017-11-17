@@ -32,5 +32,12 @@ describe('Wikimobilizer', function() {
 
   });
 
+  describe("#redirect", function() {
+    it('does only issue a redirect if the requested URL requires one', function () {
+      Wikimobilizer.redirect({url: "https://de.m.wikipedia.org/wiki/Irland"}).
+        should.be.an.Object.and.be.empty;
+    });
+  });
+
 });
 

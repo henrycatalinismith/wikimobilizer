@@ -14,7 +14,7 @@ I made this extension because I wanted a nice way of migrating permanently to
 the mobile front-end. There are certainly other ways of achieving this, but I
 personally wanted to use an extension for it, and there wasn't one.
 
-![Screenshot](https://raw.github.com/hnrysmth/wikimobilizer/master/sidebyside.png)
+![Screenshot](https://codeberg.org/henrycatalinismith/wikimobilizer/raw/branch/main/sidebyside.png)
 
 Installation
 ------------
